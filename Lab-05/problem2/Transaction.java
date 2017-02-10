@@ -12,11 +12,13 @@ public class Transaction {
     private String narrtion = null;
     private double ammount = 0;
     private boolean debit = false;
+    private double final_ammount = 0;
 
-    public Transaction(String narrtion, double ammount, boolean debit) {
+    public Transaction(String narrtion, double ammount, boolean debit, double final_ammount) {
         this.narrtion = narrtion;
         this.ammount = ammount;
         this.debit = debit;
+        this.final_ammount = final_ammount;
         this.date = dateFormat.format(cal.getTime());
     }
 

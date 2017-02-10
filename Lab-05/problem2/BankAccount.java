@@ -30,7 +30,7 @@ public class BankAccount {
     public void deposit(double amount) {
         double newBalance = balance + amount;
         balance = newBalance;
-        transactions.add(new Transaction("diposit ammount", amount, debit));
+        transactions.add(new Transaction("diposit ammount", amount, debit, balance));
     }
 
     public void withdraw(double amount) throws DailyLimitException, InsuffBalanceException {
@@ -42,7 +42,7 @@ public class BankAccount {
             throw (new InsuffBalanceException());
         }
         balance = newBalance;
-        transactions.add(new Transaction("withdraw ammount", amount, credit));
+        transactions.add(new Transaction("withdraw ammount", amount, credit, balance));
     }
 
     public double getBalance() {
